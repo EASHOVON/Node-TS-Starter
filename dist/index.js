@@ -7,7 +7,7 @@ import { users } from "./Utils/firebase.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 app.get("/", async (req, res) => {
     const allUsers = (await users.get()).docs;
     res.json(allUsers);
